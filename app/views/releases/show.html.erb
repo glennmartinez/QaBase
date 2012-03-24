@@ -1,0 +1,8 @@
+<h2><%= @release.name %></h2>
+
+<% title(@release.name, "Releases") %>
+<%= link_to "Edit Release", edit_release_path(@release) %>
+<%= link_to "Delete Release", @release, :method => :delete,
+	:confirm => "Are you sure you want to delete this release?" %>
+
+<%= link_to "New Feature", new_release_feature_path(@release) %>
