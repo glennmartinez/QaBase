@@ -6,3 +6,12 @@
 	:confirm => "Are you sure you want to delete this release?" %>
 
 <%= link_to "New Feature", new_release_feature_path(@release) %>
+
+<ul id='features'>
+	<% @release.features.each do |feature| %>
+		<li>
+		<%= feature.id %> - <%= link_to feature.title, [@release, feature] %>
+		</li>
+	<% end %>
+
+</ul>
