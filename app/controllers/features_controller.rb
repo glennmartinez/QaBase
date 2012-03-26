@@ -27,6 +27,28 @@ before_filter :find_feature, :only => [:show,
 		
 	end
 
+	def edit
+		
+	end
+
+	def update
+		if @feature.update_attributes(params[:feature])
+			flash[:notice] = "Feature has been updated."
+			redirect_to [@release, @feature]
+		else
+			flash[:alert] = "Feature has not been updated."
+			render :action => "edit"
+		end
+		
+	end
+
+	def destroy
+		@feature.destroy
+		flash[:notice] = "Feature has been deleted."
+		redirect_to @release
+		
+	end
+
 private
   	def find_release
     	@release = Release.find(params[:release_id])

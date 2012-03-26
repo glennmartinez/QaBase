@@ -7,7 +7,7 @@
 
 <%= link_to "New Feature", new_release_feature_path(@release) %>
 
-<ul id='features'>
+<ul id='tickets'>
 	<% @release.features.each do |feature| %>
 		<li>
 		<%= feature.id %> - <%= link_to feature.title, [@release, feature] %>

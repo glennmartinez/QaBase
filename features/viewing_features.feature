@@ -18,7 +18,7 @@ Background:
     Then I should see "Make it shiny!"
     And I should not see "Standards compliance"
     When I follow "Make it shiny!"
-    Then I should see "Make it shiny" within "#feature h2"
+    Then I should see "Make it shiny" within "#ticket h2"
     And I should see "Gradients! Starbursts! Oh my!"
 
 
@@ -27,5 +27,5 @@ Background:
     Then I should see "Standards compliance"
     And I should not see "Make it shiny!"
     When I follow "Standards compliance"
-    Then I should see "Standards compliance" within "#feature h2"
+    Then I should see "Standards compliance" within "#ticket h2"
     And I should see "Isnt a joke."
