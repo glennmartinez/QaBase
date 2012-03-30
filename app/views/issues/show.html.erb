@@ -1,0 +1,18 @@
+<%= link_to @feature.title, release_feature_path(@feature.release, @feature) %>
+<div id='issue'>
+	<h2><%= @issue.title %></h2>
+	<%= simple_format(@issue.description) %>
+</div>
+
+<div>
+<%= link_to "Create Issue", new_feature_issue_path(@feature) %>
+</div>
+
+<ul id='tickets'>
+	<% @feature.issues.each do |issue| %>
+		<li>
+		<%= issue.id %> - <%= link_to issue.title, [@feature, issue] %>
+		</li>
+	<% end %>
+
+</ul>

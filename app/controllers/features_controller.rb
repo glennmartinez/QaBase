@@ -10,6 +10,7 @@ before_filter :find_feature, :only => [:show,
 	def new
 		@feature = @release.features.build
 		
+		
 	end
 
 	def create
