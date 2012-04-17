@@ -2,6 +2,10 @@ class IssuesController < ApplicationController
  before_filter :find_feature
                           
 
+ 	def index
+ 		@issues = Issue.all
+ 	end
+
 	def new
 		@issue = @feature.issues.build
 		

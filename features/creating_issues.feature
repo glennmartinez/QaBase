@@ -6,15 +6,12 @@ Background:
     Given there is a release called "Confluence"
     And that release has a feature:
       | title           | description                   |
-      |  Make it shiny! | Gradients! Starbursts! Oh my! |
-    And there is a release called "Internet Explorer"
-    And that release has a feature:
-      | title                | description   |
-      | Standards compliance |Isnt a joke. |
-    And I am on the homepage
-    And I follow "Confluence"
-    And I follow "Make it shiny!"
-    And I follow "Create New Issue"
+      |  Make it shiny | Gradients! Starbursts! Oh my! |
+    Given I am on the homepage
+    And I Follow "Confluence"
+    When I follow "Make it shiny"
+    And I follow "Issues"
+    And I follow "Create Issue"
 Scenario: Creating a issue
   When I fill in "Title" with "First Issue"
   And I fill in "Description" with "This is the first issue"
