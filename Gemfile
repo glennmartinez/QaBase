@@ -7,6 +7,8 @@ gem 'rails', '3.1.3'
 
 gem 'sqlite3'
 gem 'nokogiri'
+gem 'execjs'
+gem 'therubyracer'
 gem 'pjax_rails'
 #gem 'rack-pjax'
 
