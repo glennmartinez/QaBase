@@ -8,4 +8,6 @@
 //= require jquery_ujs
 //= require jquery.pjax
 //= require pjax
+//= require jquery.isotope.js
+//= require isotope.js
 //= require_tree .
