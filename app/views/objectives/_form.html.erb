@@ -1,0 +1,9 @@
+<%= form_for [@release,@feature, @objective] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
