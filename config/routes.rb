@@ -5,7 +5,7 @@ Qabase::Application.routes.draw do
  end
   
  resources :features do 
-      resources :issues
+      resources :issues, :objectives
  end
 
   # The priority is based upon order of creation:
