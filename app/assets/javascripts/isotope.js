@@ -1,5 +1,8 @@
+jQuery(function() { 
+$('a.pjax').pjax('#container')
+$('#container')
 
-  $(function(){
+  .on('pjax:end', function(){
       
       var $container = $('#container');
       
@@ -8,3 +11,6 @@
       });
       
     });
+});
+
+});
