@@ -8,7 +8,7 @@ Background:
       | title           | description                   |
       |  Make it shiny | Gradients! Starbursts! Oh my! |
     Given I am on the homepage
-    And I Follow "Confluence"
+    And I follow "Confluence"
     When I follow "Make it shiny"
     And I follow "Issues"
     And I follow "Create Issue"

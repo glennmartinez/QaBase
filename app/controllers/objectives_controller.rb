@@ -16,10 +16,10 @@ before_filter :find_feature
 	def create
 		@objective = @feature.objectives.build(params[:objective])
 		if @objective.save
-			flash[:notice] = "Issue has been created."
+			flash[:notice] = "Objective has been created."
 			redirect_to [@feature, @objective]
 		else
-			flash[:alert] = "Issue has not been created."
+			flash[:alert] = "Objective has not been created."
 			render :action => "new"
 		end
 		
