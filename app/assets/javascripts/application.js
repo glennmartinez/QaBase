@@ -10,4 +10,6 @@
 //= require pjax
 //= require jquery.isotope.js
 //= require isotope.js
+//= require raphael
+//= require glenn
 //= require_tree .

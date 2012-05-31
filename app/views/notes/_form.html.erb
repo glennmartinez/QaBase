@@ -1,0 +1,18 @@
+<div class="noteform">
+
+<%= form_for(@note) do |f| %>
+<%= f.error_messages %>
+
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<%= f.label :content %>
+		<%= f.text_field :content%>
+		<%= f.label :tag %>
+		<%= f.text_field :tag %>
+
+	</p>
+	<%= f.submit %>
+<% end %>
+
+</div>

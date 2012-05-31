@@ -1,0 +1,15 @@
+
+<%= @note.name %>
+
+<%= @note.content %>
+
+<%= @note.tag %>
+
+
+<div>
+	<% @notes.each do |note| %>
+		<h4><%= link_to note.name, note %></h4>
+	<% end %>
+
+</div>
+

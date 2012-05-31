@@ -4925,8 +4925,8 @@ a.badge:hover {
 }
 
 .hero-unit {
-  padding: 60px;
-  margin-bottom: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
   background-color: #ffffff;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;border: solid transparent;

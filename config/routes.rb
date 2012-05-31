@@ -8,6 +8,8 @@ Qabase::Application.routes.draw do
       resources :issues, :objectives
  end
 
+ resources :notes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
