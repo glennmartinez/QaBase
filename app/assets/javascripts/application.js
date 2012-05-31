@@ -12,4 +12,5 @@
 //= require isotope.js
 //= require raphael
 //= require glenn
+//= require editor
 //= require_tree .
