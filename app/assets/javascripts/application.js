@@ -13,4 +13,5 @@
 //= require raphael
 //= require glenn
 //= require editor
+//= require advanceditor
 //= require_tree .

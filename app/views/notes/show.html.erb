@@ -1,12 +1,9 @@
 
-<%= @note.name %>
 
-<%= @note.content %>
-
-<%= @note.tag %>
+<%= render "form" %>
 
 
-<div>
+<div class="noteslist">
 	<% @notes.each do |note| %>
 		<h4><%= link_to note.name, note %></h4>
 	<% end %>

@@ -1,11 +1,43 @@
-<style  > 
-#toolbar [data-wysihtml5-action] {
+<div class="noteform">
+
+
+
+
+
+<style>
+  body {
+    font-family: Verdana;
+    font-size: 9px;
+  }
+  
+  h2 {
+    margin-bottom: 0;
+  }
+  
+  small {
+    display: block;
+    margin-top: 40px;
+    font-size: 9px;
+  }
+  
+  small,
+  small a {
+    color: #666;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  #toolbar [data-wysihtml5-action] {
     float: right;
   }
   
   #toolbar,
   textarea {
-    width: 850px;
+    width: 550px;
     padding: 5px;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -46,70 +78,102 @@
   a[data-wysihtml5-command-value="blue"] {
     color: blue;
   }
+
+  .noteslist {
+  	align:right;
+  }
 </style>
-<div class="noteform">
+	<%= form_for @note do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %> 
 
-<%= form_for(@note) do |f| %>
-<%= f.error_messages %>
-
-
-
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-		<div id="toolbar" style="display: none;">
-		    <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
-		    <a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
-		    <a data-wysihtml5-command="createLink">insert link</a> |
-		    <a data-wysihtml5-command="insertImage">insert image</a> |
-		    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
-		    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
-		    <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
-		    <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
-		    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a> |
-		    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a> |
-		    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a> |
-		    <a data-wysihtml5-command="insertSpeech">speech</a>
-		    <a data-wysihtml5-action="change_view">switch to html view</a>
-		    
-		    <div data-wysihtml5-dialog="createLink" style="display: none;">
-		      <label>
-		        Link:
-		        <input data-wysihtml5-dialog-field="href" value="http://">
-		      </label>
-		      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-		    </div>
-		    
-		    <div data-wysihtml5-dialog="insertImage" style="display: none;">
-		      <label>
-		        Image:
-		        <input data-wysihtml5-dialog-field="src" value="http://">
-		      </label>
-		      <label>
-		        Align:
-		        <select data-wysihtml5-dialog-field="className">
-		          <option value="">default</option>
-		          <option value="wysiwyg-float-left">left</option>
-		          <option value="wysiwyg-float-right">right</option>
-		        </select>
-		      </label>
-		      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-		    </div>
+ <div id="toolbar" style="display: none;">
+    <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
+    <a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
+    <a data-wysihtml5-command="createLink">insert link</a> |
+    <a data-wysihtml5-command="insertImage">insert image</a> |
+    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
+    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
+    <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
+    <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
+    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a> |
+    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a> |
+    <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a> |
+    <!-- <a data-wysihtml5-command="insertSpeech">speech</a> -->
+    <!-- <a data-wysihtml5-action="change_view">switch to html</a> -->
     
-  		</div>
-		<div id="textarea" placeholder="Enter text ...">
-		<%= f.text_area :content%>
-		</div> 
+    <div data-wysihtml5-dialog="createLink" style="display: none;">
+      <label>
+        Link:
+        <input data-wysihtml5-dialog-field="href" value="http://">
+      </label>
+      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
+    </div>
+    
+    <div data-wysihtml5-dialog="insertImage" style="display: none;">
+      <label>
+        Image:
+        <input data-wysihtml5-dialog-field="src" value="http://">
+      </label>
+      <label>
+        Align:
+        <select data-wysihtml5-dialog-field="className">
+          <option value="">default</option>
+          <option value="wysiwyg-float-left">left</option>
+          <option value="wysiwyg-float-right">right</option>
+        </select>
+      </label>
+      <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
+    </div>
+    
+  </div>
+ 
+  <%= f.text_area :content %>
+  <%= f.label :tag %>
+  <%= f.text_field :tag %>
+  <br>
+  <%= f.submit %>
+  <input type="reset" value="Reset form!">
 
-		<%= f.label :tag %>
-		<%= f.text_field :tag %>
-
-	</p>
-	<%= f.submit %>
 <% end %>
 
+ 
+
+<script>
+  var editor = new wysihtml5.Editor("note_content", {
+    toolbar:      "toolbar",
+    stylesheets:  "css/stylesheet.css",
+    parserRules:  wysihtml5ParserRules
+  });
+  
+  var log = document.getElementById("log");
+  
+  editor
+    .on("load", function() {
+      log.innerHTML += "<div>load</div>";
+    })
+    .on("focus", function() {
+      log.innerHTML += "<div>focus</div>";
+    })
+    .on("blur", function() {
+      log.innerHTML += "<div>blur</div>";
+    })
+    .on("change", function() {
+      log.innerHTML += "<div>change</div>";
+    })
+    .on("paste", function() {
+      log.innerHTML += "<div>paste</div>";
+    })
+    .on("newword:composer", function() {
+      log.innerHTML += "<div>newword:composer</div>";
+    })
+    .on("undo:composer", function() {
+      log.innerHTML += "<div>undo:composer</div>";
+    })
+    .on("redo:composer", function() {
+      log.innerHTML += "<div>redo:composer</div>";
+    });
+</script>
+
+
 </div>
-
-
- 
- 
-</form>
