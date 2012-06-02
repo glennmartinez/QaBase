@@ -1,12 +1,19 @@
+<div class="row">
 
+
+
+<div class="span8">
 
 <%= render "form" %>
 
+</div>
 
-<div class="noteslist">
+<div class="span4">
 	<% @notes.each do |note| %>
 		<h4><%= link_to note.name, note %></h4>
 	<% end %>
+
+</div>
 
 </div>
 

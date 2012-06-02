@@ -6,3 +6,21 @@
  *= require_tree . 
 */
 
+.noteform {
+
+    width: 550px;
+    position: relative;
+}
+
+.noteslist {
+    
+    width: 250px;
+    position:relative;
+    right:20px;
+    align:right;
+}
+
+.forminput input{
+
+    width:450px;
+}

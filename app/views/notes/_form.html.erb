@@ -1,8 +1,4 @@
-<div class="noteform">
-
-
-
-
+ 
 
 <style>
   body {
@@ -46,7 +42,7 @@
   }
   
   textarea {
-    height: 280px;
+    height: 250px;
     border: 2px solid green;
     font-family: Verdana;
     font-size: 11px;
@@ -84,8 +80,11 @@
   }
 </style>
 	<%= form_for @note do |f| %>
+		 
 		<%= f.label :name %>
+		<div class="forminput">
 		<%= f.text_field :name %> 
+		</div>
 
  <div id="toolbar" style="display: none;">
     <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
@@ -175,5 +174,4 @@
     });
 </script>
 
-
-</div>
+ 

@@ -33,4 +33,19 @@ def show
 	
 end
 
+def edit
+end
+
+def update
+	@note = Note.find(params[:id])
+	if @note.update_attributes(params[:note])
+			 
+		redirect_to @note
+	else
+		 
+		render :action => "edit"
+	end	
+end
+
+
 end
