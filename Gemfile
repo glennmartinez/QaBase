@@ -10,6 +10,8 @@ gem 'nokogiri'
 gem 'execjs'
 gem 'therubyracer'
 gem 'pjax_rails'
+gem 'will_paginate', '3.0.pre2'
+gem 'best_in_place'
 #gem 'rack-pjax'
 
 # Gems used only for assets and not required

@@ -79,11 +79,12 @@
   	align:right;
   }
 </style>
+
 	<%= form_for @note do |f| %>
-	 
+		 
 		<%= f.label :name %>
 		<div class="forminput">
-		<%= f.text_field :name %> 
+		<%= best_in_place @note, :name, :type => :input %> 
 		</div>
 
  <div id="toolbar" style="display: none;">
@@ -129,7 +130,8 @@
  
   <%= f.text_area :content %>
   <%= f.label :tag %>
-  <%= f.text_field :tag %>
+  <%= best_in_place @note, :tag, :type => :input %> 
+  
   <br>
   <%= f.submit %>
   <input type="reset" value="Reset form!">
@@ -141,6 +143,8 @@
 <script>
   var editor = new wysihtml5.Editor("note_content", {
     toolbar:      "toolbar",
+    autoLink:             true, 
+     style:             true,
     stylesheets:  "css/stylesheet.css",
     parserRules:  wysihtml5ParserRules
   });
