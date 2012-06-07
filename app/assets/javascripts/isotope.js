@@ -1,16 +1,16 @@
-jQuery(function() { 
-$('a.pjax').pjax('#container')
-$('#container')
+// jQuery(function() { 
+// $('a.pjax').pjax('#container')
+// $('#container')
 
-  .on('pjax:end', function(){
+//   .on('pjax:end', function(){
       
-      var $container = $('#container');
+//       var $container = $('#container');
       
-      $container.isotope({
-        itemSelector: '.element'
-      });
+//       $container.isotope({
+//         itemSelector: '.element'
+//       });
       
-    });
-});
+//     });
+// });
 
-});
+// });

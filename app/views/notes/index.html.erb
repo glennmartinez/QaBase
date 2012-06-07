@@ -1,10 +1,29 @@
 <%= link_to "New Note", new_note_path %>
 
 <h2>Notes</h2>
-<div>
-	<% @notes.each do |note| %>
-		<h4><%= link_to note.name, note %></h4>
-	<% end %>
-
-</div>
  
+ 
+ <%= form_tag notes_path, :method => 'get', :id => "notes_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <br><br><br>
+  <div id="notes"><%= render 'notes' %></div>
+<% end %>
+
+<script type="text/javascript">
+
+
+$(function() {
+  $("#notes th a, #notes .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  
+  $("#notes_search input").keyup(function() {
+    $.get($("#notes_search").attr("action"), $("#notes_search").serialize(), null, "script");
+    return false;
+  });
+});
+</script>

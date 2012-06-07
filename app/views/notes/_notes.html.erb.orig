@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+=======
+	<% @notes.each do |note| %>
+		<h4><%= link_to note.name, note %></h4>
+	<% end %>
+>>>>>>> 16f3c10346d36d5e5067b03318321bfc3018fd5b

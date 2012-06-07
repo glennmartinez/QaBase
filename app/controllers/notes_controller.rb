@@ -1,10 +1,13 @@
 class NotesController < ApplicationController
+	  helper_method :sort_column, :sort_direction
+	  respond_to :html, :json
 
 def index
-	@notes = Note.all
+	# @notes = Note.all
 
-	@note = Note.new
-	
+	# @note = Note.new
+	@notes = Note.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+
 end
 
 def new
@@ -38,14 +41,19 @@ end
 
 def update
 	@note = Note.find(params[:id])
-	if @note.update_attributes(params[:note])
-			 
-		redirect_to @note
-	else
-		 
-		render :action => "edit"
-	end	
+	@note.update_attributes(params[:note])
+	respond_with @note		 
+	 
 end
 
+  private
+  
+  def sort_column
+    Note.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 
 end
