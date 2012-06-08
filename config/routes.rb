@@ -1,11 +1,11 @@
 Qabase::Application.routes.draw do 
 
  resources :releases do 
-      resources :features
+   resources :features
  end
   
  resources :features do 
-      resources :issues, :objectives
+   resources :issues, :objectives
  end
 
   # The priority is based upon order of creation:
