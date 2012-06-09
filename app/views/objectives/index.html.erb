@@ -1,14 +1,9 @@
 <%= link_to @feature.title, release_feature_path(@feature.release, @feature) %>
 
-<div>
-<%= link_to "Create Objective", new_feature_objective_path(@feature) %>
-</div>
+<div><%= link_to "Create Objective", new_feature_objective_path(@feature) %></div>
 
 <ul id='tickets'>
 	<% @feature.objectives.each do |objective| %>
-		<li>
-		<%= objective.id %> - <%= link_to objective.title, [@feature, objective] %>
-		</li>
+		<li><%= objective.id %> - <%= link_to objective.title, [@feature, objective] %></li>
 	<% end %>
-
 </ul>
