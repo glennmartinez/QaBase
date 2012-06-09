@@ -1,31 +1,18 @@
 <h2><%= @release.name %></h2>
-
 <% title(@release.name, "Releases") %>
 <%= link_to "Edit Release", edit_release_path(@release) %>
-<%= link_to "Delete Release", @release, :method => :delete,
-	:confirm => "Are you sure you want to delete this release?" %>
-
+<%= link_to "Delete Release", @release, :method => :delete, :confirm => "Are you sure you want to delete this release?" %>
 <%= link_to "New Feature", new_release_feature_path(@release) %>
-
 <ul id='tickets'>
 	<% @release.features.each do |feature| %>
-		<li>
-		<%= feature.id %> - <%= link_to feature.title, [@release, feature] %>
-		</li>
+		<li><%= feature.id %> - <%= link_to feature.title, [@release, feature] %></li>
 	<% end %>
-
 </ul>
-
-
 <script type="text/javascript">
-
   $(function(){
-      
-      var $container = $('#container');
-      
-      $container.isotope({
-        itemSelector: '.element'
-      });
-      
+    var $container = $('#container');
+    $container.isotope({
+      itemSelector: '.element'
     });
+  });
 </script>

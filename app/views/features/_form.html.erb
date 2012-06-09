@@ -1,12 +1,21 @@
 <%= form_for [@release, @feature] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :title %><br>
+    <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :description %><br>
+    <%= f.label :notes_list , :label => 'Notes List with inline source'%><br />
+    <%= f.text_field :notes_list, 'data-autocomplete-source' => Note.order(:name).map(&:name).to_json %>
+    <%-# this makes it inline %>
+  </p>
+  <p>
+    <%= f.label :notes_list, :label => 'Notes List with Remote Source' %><br />
+    <%= f.text_field :notes_list, 'data-autocomplete-source' => notes_path, :id => 'feature_note_list_remote' %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
     <%= f.text_area :description %>
-</p>
+  </p>
   <%= f.submit %>
 <% end %>

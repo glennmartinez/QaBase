@@ -4,9 +4,7 @@
 	<%= simple_format(@issue.description) %>
 </div>
 
-<div>
-<%= link_to "Create Issue", new_feature_issue_path(@feature) %>
-</div>
+<div><%= link_to "Create Issue", new_feature_issue_path(@feature) %></div>
 
 <ul id='tickets'>
 	<% @feature.issues.each do |issue| %>
@@ -14,5 +12,4 @@
 		<%= issue.id %> - <%= link_to issue.title, [@feature, issue] %>
 		</li>
 	<% end %>
-
 </ul>

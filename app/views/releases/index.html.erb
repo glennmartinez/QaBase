@@ -1,4 +1,3 @@
-
 <%= link_to "New Release", new_release_path %>
 
 <h2>Releases</h2>
@@ -6,5 +5,4 @@
 	<% @releases.each do |release| %>
 		<li><%= link_to release.name, release %></li>
 	<% end %>
-
 </ul>

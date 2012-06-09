@@ -5,7 +5,16 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require jquery.pjax
-//= require pjax
-//= require_tree .
+//= require jquery.tokeninput
+// require jquery.pjax
+// require jquery.isotope.min
+// require pjax
+// require bootstrap
+// require appie
+// require features
+// require issues
+// require objectives
+// require releases
+//= require notes
