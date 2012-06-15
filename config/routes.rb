@@ -9,6 +9,7 @@ Qabase::Application.routes.draw do
  end
 
  resources :notes
+ resources :labels
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Label.create(name:'Test')
+
+Label.create(name:'Git')
+
+Label.create(name:'Java')
+
+Label.create(name:'Ruby')
+
+Label.create(name:'Rails')

@@ -3,9 +3,12 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :name
       t.text :content
-      t.string :tag
+      t.references :label
 
       t.timestamps
     end
+    add_index :notes, :label_id
   end
 end
+
+ 
