@@ -12,6 +12,13 @@
   <div id="notes"><%= render 'notes' %></div>
 <% end %>
 
+  <% @labels.each do |label| %>
+ 
+  <p class="number">  <%= label.name %> </p>
+    
+  <% end %>
+
+
 <script type="text/javascript">
 
 

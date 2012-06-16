@@ -22,8 +22,8 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function() {
-  $("#note_label_tokens").live).tokenInput("/labels.json", {
+$(function() {
+  $("#note_label_tokens").tokenInput("/labels.json", {
     crossDomain: false,
     prePopulate: $("#note_label_tokens").data("pre"),
     theme: "facebook"

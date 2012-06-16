@@ -12,6 +12,8 @@ def index
 	#     format.html
 	#     format.json { render :json => @notes.map(&:attributes) }
  #  end
+
+  @labels = label.notes.where("id !=?", 1)
   	 
 end
 

@@ -16,6 +16,8 @@ class Note < ActiveRecord::Base
     	self.label_ids = ids.split(",")
   	end
 
+ 
+
 end
 
 
