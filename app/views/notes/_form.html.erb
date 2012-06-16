@@ -129,7 +129,7 @@
  
   <%= f.text_area :content %>
   <%= f.label :label_tokens, "Labels" %>
-  <%= f.text_field :label_tokens, "data-pre" => @note.labels.map(&:attributes).to_json    %>
+  <%= f.text_field :label_tokens, "data-pre" => @note.labels.map(&:attributes).to_json%>
   <br>
   <%= f.submit %>
   <input type="reset" value="Reset form!">

@@ -33,7 +33,7 @@ var DEFAULT_SETTINGS = {
     preventDuplicates: false,
 
 	// Output settings
-    tokenValue: "name",
+    tokenValue: "id",
 
 	// Prepopulation settings
     prePopulate: null,

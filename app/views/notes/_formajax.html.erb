@@ -129,8 +129,10 @@
   </div>
  
   <%= f.text_area :content %>
-  <%= f.label :tag %>
-  <%= best_in_place @note, :tag, :type => :input %> 
+  <%= f.label :label_tokens, "Labels" %>
+   <%= f.label :label_tokens, "Labels" %>
+  
+  <%= best_in_place @note, :label_tokens, "data-pre" => @note.labels.map(&:attributes).to_json, :type => :input %> 
   
   <br>
   <%= f.submit %>

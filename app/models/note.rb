@@ -1,8 +1,7 @@
 class Note < ActiveRecord::Base
 	attr_accessible :name, :label_tokens
-
-	has_many :labels
-
+	has_many :labelships
+	has_many :labels, :through => :labelships
 	attr_reader :label_tokens
 
 	def self.search(search)

@@ -1,17 +1,17 @@
 class NotesController < ApplicationController
-	  helper_method :sort_column, :sort_direction
+	  # helper_method :sort_column, :sort_direction
 	  respond_to :html, :json
 
 def index
-	# @notes = Note.all
+	 # @notes = Note.all
 
 	# @note = Note.new
-	#@notes = Note.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
-	@notes = Note.where("name like ?", "%#{params[:q]}%")
+	@notes = Note.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+	# @notes = Note.where("name like ?", "%#{params[:q]}%")
 	# respond_to do |format|
 	#     format.html
 	#     format.json { render :json => @notes.map(&:attributes) }
- #    end
+ #  end
   	 
 end
 
