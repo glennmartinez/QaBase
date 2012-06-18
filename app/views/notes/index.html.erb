@@ -15,8 +15,11 @@
   <% @labels.each do |label| %>
  
   <p class="number">  <%= label.name %> </p>
-    
+ 	<%label.notes.each do |lnote| %>
+   	<%= link_to lnote.name, lnote %>
+    <% end %>
   <% end %>
+ 
 
 
 <script type="text/javascript">

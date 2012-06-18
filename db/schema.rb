@@ -49,9 +49,12 @@ ActiveRecord::Schema.define(:version => 20120615141441) do
   create_table "notes", :force => true do |t|
     t.string   "name"
     t.text     "content"
+    t.integer  "label_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "notes", ["label_id"], :name => "index_notes_on_label_id"
 
   create_table "objectives", :force => true do |t|
     t.string   "title"

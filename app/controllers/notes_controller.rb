@@ -13,7 +13,7 @@ def index
 	#     format.json { render :json => @notes.map(&:attributes) }
  #  end
 
-  @labels = label.notes.where("id !=?", 1)
+  @labels = Label.all
   	 
 end
 
