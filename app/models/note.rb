@@ -1,5 +1,5 @@
 class Note < ActiveRecord::Base
-	attr_accessible :name, :label_tokens
+	# attr_accessible :name, :content, :label_tokens
 	has_many :labelships
 	has_many :labels, :through => :labelships
 	attr_reader :label_tokens

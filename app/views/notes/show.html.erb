@@ -4,16 +4,51 @@
 
 <div class="span8">
 
+  <h2>Notes</h2>
+
 <%= render "form" %>
 
 </div>
 
 <div class="span4">
-	<% @notes.each do |note| %>
+<!-- 	<% @notes.each do |note| %>
 		<h4><%= link_to note.name, note %></h4>
-	<% end %>
+	<% end %> -->
+ <%= form_tag notes_path, :method => 'get', :id => "notes_search" do %>
+  <p>
+  	<br>
+    <%= text_field_tag :search, params[:search] %>
+    
+  </p>
+  <br><br><br>
+  <div id="notes"><%= render 'notes' %></div>
+<% end %>
 
 </div>
 
 </div>
 
+<script type="text/javascript">
+
+$(function() {
+  $("#note_label_tokens").tokenInput("/labels.json", {
+    crossDomain: false,
+    prePopulate: $("#note_label_tokens").data("pre"),
+    theme: "facebook"
+  });
+});
+
+$(function() {
+  $("#notes th a, #notes .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  
+  $("#notes_search input").keyup(function() {
+    $.get($("#notes_search").attr("action"), $("#notes_search").serialize(), null, "script");
+    return false;
+  });
+});
+
+
+</script>

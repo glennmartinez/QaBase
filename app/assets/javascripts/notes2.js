@@ -22,10 +22,10 @@ $(document).ready(function(){
 });
 
 
-$(function() {
-  $("#note_label_tokens").tokenInput("/labels.json", {
-    crossDomain: false,
-    prePopulate: $("#note_label_tokens").data("pre"),
-    theme: "facebook"
-  });
-});
+// $(function() {
+//   $("#note_label_tokens").tokenInput("/labels.json", {
+//     crossDomain: false,
+//     prePopulate: $("#note_label_tokens").data("pre"),
+//     theme: "facebook"
+//   });
+// });

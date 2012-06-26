@@ -171,7 +171,8 @@ a:hover {
 }
 
 .row {
-  margin-left: -20px;
+  margin-left: 0px;
+  margin-right: 0px;
   *zoom: 1;
 }
 
@@ -321,10 +322,10 @@ a:hover {
   border: solid transparent;
 
 min-height: 28px;
-padding: 10px 0 0;
-padding-top: 50px;
+padding: 100px 0 0;
+padding-top: 40px;
 padding-right: px;
-padding-bottom: 50px;
+padding-bottom: 15px;
 padding-left: 0px;
 
 }
@@ -4926,7 +4927,10 @@ a.badge:hover {
 }
 
 .hero-unit {
-  padding: 20px;
+  padding-bottom:20px;
+  padding-top:0px;
+  padding-left:20px;
+  padding-right:20px;
   margin-bottom: 20px;
   background-color: #ffffff;
   -webkit-border-radius: 6px;

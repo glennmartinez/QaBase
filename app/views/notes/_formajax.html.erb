@@ -2,8 +2,8 @@
 
 <style>
   body {
-    font-family: Verdana;
-    font-size: 9px;
+    /*font-family: Verdana;*/
+    font-size: 10px;
   }
   
   h2 {
@@ -130,8 +130,7 @@
  
   <%= f.text_area :content %>
   <%= f.label :label_tokens, "Labels" %>
-   <%= f.label :label_tokens, "Labels" %>
-  
+   
   <%= best_in_place @note, :label_tokens, "data-pre" => @note.labels.map(&:attributes).to_json, :type => :input %> 
   
   <br>
