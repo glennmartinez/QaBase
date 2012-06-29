@@ -4,8 +4,7 @@ gem 'rails', '3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
+ 
 gem 'nokogiri'
 gem 'execjs'
 gem 'therubyracer'
@@ -41,6 +40,7 @@ gem 'jquery-rails'
 group :test, :development do
   # Pretty printed test output
   gem 'rspec-rails', '~> 2.5'
+  gem 'sqlite3'
 end
 
 group :test do
@@ -48,4 +48,11 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl'
+  gem 'sqlite3'
 end
+
+group :production do
+  gem 'pg'
+end
+
+
