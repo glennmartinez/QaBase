@@ -48,7 +48,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl'
-  gem 'sqlite3'
+   
 end
 
 group :production do
