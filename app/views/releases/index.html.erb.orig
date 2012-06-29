@@ -1,0 +1,13 @@
+<%= link_to "New Release", new_release_path %>
+
+<h2>Releases</h2>
+<div>
+	<% @releases.each do |release| %>
+		<h4><%= link_to release.name, release %></h4>
+	<% end %>
+<<<<<<< HEAD
+</ul>
+=======
+
+</div>
+>>>>>>> remotes/origin/playaround

@@ -1,0 +1,29 @@
+<%= link_to @feature.title, release_feature_path(@feature.release, @feature) %>
+
+<div><%= link_to "Create Issue", new_feature_issue_path(@feature) %></div>
+
+<div id="container" class="super-list width2 height2 clearfix">
+	<% @feature.issues.each do |issue| %>
+    <div class="element metalloid isotope-item" data-symbol="Mg" data-category="alkaline-earth">
+      <p class="number"><%= issue.id %></p>
+      <h2 class="symbol"><%= link_to issue.title, [@feature, issue] %> </h2>
+    </div>
+  <% end %>
+</div>
+
+<!-- 
+
+<script type="text/javascript">
+  $(function(){
+    var $container = $('#container');
+    $container.isotope({
+      itemSelector: '.element',
+      layoutMode : 'fitRows'
+    });
+  });
+</script>
+<<<<<<< HEAD
+=======
+
+ -->
+>>>>>>> remotes/origin/playaround

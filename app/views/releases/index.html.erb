@@ -1,8 +1,10 @@
+
 <%= link_to "New Release", new_release_path %>
 
 <h2>Releases</h2>
-<ul>
+<div>
 	<% @releases.each do |release| %>
-		<li><%= link_to release.name, release %></li>
+		<h4><%= link_to release.name, release %></h4>
 	<% end %>
-</ul>
+
+</div>

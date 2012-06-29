@@ -1,0 +1,35 @@
+<h2><%= @release.name %></h2>
+<% title(@release.name, "Releases") %>
+<%= link_to "Edit Release", edit_release_path(@release) %>
+<%= link_to "Delete Release", @release, :method => :delete, :confirm => "Are you sure you want to delete this release?" %>
+<%= link_to "New Feature", new_release_feature_path(@release) %>
+<<<<<<< HEAD
+<ul id='tickets'>
+	<% @release.features.each do |feature| %>
+		<li><%= feature.id %> - <%= link_to feature.title, [@release, feature] %></li>
+	<% end %>
+</ul>
+=======
+
+<div id="container" class="super-list width2 height2  clearfix">
+	<% @release.features.each do |feature| %>
+	<div class="element alkaline-earth metal   " data-symbol="Mg" data-category="alkaline-earth">
+		<p class="number"> <%=  feature.id %> </p>
+		<h4 class="symbol"> <%= link_to feature.title, [@release, feature] %> </h4>
+		
+	</div>
+	<% end %>
+
+
+</div>
+
+
+>>>>>>> remotes/origin/playaround
+<script type="text/javascript">
+  $(function(){
+    var $container = $('#container');
+    $container.isotope({
+      itemSelector: '.element'
+    });
+  });
+</script>

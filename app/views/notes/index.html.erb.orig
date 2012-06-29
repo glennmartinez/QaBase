@@ -1,0 +1,79 @@
+<<<<<<< HEAD
+<h1>Listing notes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @notes.each do |note| %>
+  <tr>
+    <td><%= note.name %></td>
+    <td><%= note.tag %></td>
+    <td><%= link_to 'Show', note %></td>
+    <td><%= link_to 'Edit', edit_note_path(note) %></td>
+    <td><%= link_to 'Destroy', note, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Note', new_note_path %>
+=======
+<div class="row">
+
+<div class="span7">
+
+  <h2>Notes</h2>
+
+
+<%= link_to "New Note", new_note_path %>
+
+ 
+ 
+ <%= form_tag notes_path, :method => 'get', :id => "notes_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <br><br><br>
+  <div id="notes"><%= render 'notes' %></div>
+<% end %>
+
+</div>
+
+<div class="span5"
+  <% @labels.each do |label| %>
+ 
+  <p class="number">  <b><%= label.name %></b> </p>
+ 	<%label.notes.each do |lnote| %>
+   	<%= link_to lnote.name, lnote %>
+    <% end %>
+  <% end %>
+ 
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+
+$(function() {
+  $("#notes th a, #notes .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  
+  $("#notes_search input").keyup(function() {
+    $.get($("#notes_search").attr("action"), $("#notes_search").serialize(), null, "script");
+    return false;
+  });
+});
+</script>
+>>>>>>> remotes/origin/playaround
