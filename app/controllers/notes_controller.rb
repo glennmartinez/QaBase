@@ -6,7 +6,7 @@ def index
 	 # @notes = Note.all
 
 	# @note = Note.new
-	@notes = Note.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+	@notes = Note.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
 	# @notes = Note.where("name like ?", "%#{params[:q]}%")
 	# respond_to do |format|
 	#     format.html
@@ -39,7 +39,9 @@ end
 def show
 
 	@note = Note.find(params[:id])
-	@notes = Note.all
+	#@notes = Note.all
+	@notes = Note.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 25, :page => params[:page])
+
 	
 end
 
