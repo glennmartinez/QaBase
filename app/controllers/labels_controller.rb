@@ -3,7 +3,7 @@ class LabelsController < ApplicationController
 
 	def index
 
-		@labels = Label.where("name like ?", "%#{params[:q]}%")
+		@labels = Label.where("name like ?", "%#{params[:q]}%").group(:name)
   		respond_to do |format|
     		format.html
     		format.json { render :json => @labels.map(&:attributes) }
