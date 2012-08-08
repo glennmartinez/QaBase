@@ -13,7 +13,12 @@ class Note < ActiveRecord::Base
     end
 
     def label_tokens=(ids)
-    	self.label_ids = ids.split(",")
+    	
+
+    	ids.gsub!(/CREATE_(.+?)_END/) do
+      	Label.create!(:name => $1).id
+    end
+    self.label_ids = ids.split(",")
   	end
 
  
