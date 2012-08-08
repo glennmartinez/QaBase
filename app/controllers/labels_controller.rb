@@ -3,7 +3,7 @@ class LabelsController < ApplicationController
 
 	def index
 
-		@labels = Label.where("name ilike ?", "%#{params[:q]}%")
+		@labels = Label.where("name ilike ?", "%#{params[:q]}%").limit(1)
   		respond_to do |format|
     		format.html
     		format.json { render :json => @labels.map(&:attributes) }

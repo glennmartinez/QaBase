@@ -5,9 +5,10 @@ gem 'rails', '3.1.3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 gem 'thin'
+gem 'pg'
 gem 'nokogiri'
 gem 'execjs'
-gem 'therubyracer'
+
 gem 'pjax_rails'
 gem 'will_paginate', '3.0.pre2'
 gem 'best_in_place'
@@ -40,7 +41,8 @@ gem 'jquery-rails'
 group :test, :development do
   # Pretty printed test output
   gem 'rspec-rails', '~> 2.5'
-  gem 'sqlite3'
+  #gem 'sqlite3'
+  gem 'therubyracer'
 end
 
 group :test do
@@ -52,7 +54,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  
 
 end
 

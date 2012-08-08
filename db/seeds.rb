@@ -9,7 +9,7 @@
 Label.create(name:'Test')
 
 Label.create(name:'Git')
-
+Label.create(name:'Git')
 Label.create(name:'Java')
 
 Label.create(name:'Ruby')
